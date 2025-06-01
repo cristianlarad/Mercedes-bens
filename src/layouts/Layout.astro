@@ -37,7 +37,15 @@ import Navbar from "../components/Navbar.astro";
 </style>
 <script type="module">
   const img = document.querySelector("#img");
+  const preloadFrames = () => {
+    for (let i = 1; i <= 242; i++) {
+      const id = i.toString().padStart(4, "0");
+      const imgPreload = new Image();
+      imgPreload.src = `frames/frame_${id}.webp`;
+    }
+  };
 
+  preloadFrames();
   document.addEventListener(
     "wheel",
     (event) => {
@@ -51,16 +59,23 @@ import Navbar from "../components/Navbar.astro";
   window.addEventListener("resize", () => {
     maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   });
+  function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+  }
 
-  window.addEventListener("scroll", () => {
-    requestAnimationFrame(() => {
-      const MAX_FRAMES = 242;
-      const scrollPosition = window.scrollY;
-      const scrollFraction = scrollPosition / maxScroll;
-      const frame = Math.floor(scrollFraction * MAX_FRAMES) || 1;
+  const updateFrame = debounce(() => {
+    console.log("Scrolling...", window.scrollY);
+    const MAX_FRAMES = 242;
+    const scrollPosition = window.scrollY;
+    const scrollFraction = scrollPosition / maxScroll;
+    const frame = Math.floor(scrollFraction * MAX_FRAMES) || 1;
+    const id = frame.toString().padStart(4, "0");
+    img.src = `frames/frame_${id}.webp`;
+  }, 50);
 
-      const id = frame.toString().padStart(4, "0");
-      img.src = `frames/frame_${id}.webp`;
-    });
-  });
+  window.addEventListener("scroll", updateFrame);
 </script>
