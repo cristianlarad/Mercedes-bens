@@ -1,22 +1,66 @@
+---
+import "../styles/globals.css";
+import Navbar from "../components/Navbar.astro";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <Navbar />
+    <img id="img" src="/frames/frame_0001.webp" alt="" loading="lazy" />
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #img {
+    width: 100vw;
+    height: 100dvh;
+    object-fit: cover;
+    position: fixed;
+    z-index: -50;
+    will-change: transform, opacity;
+  }
 </style>
+<script type="module">
+  const img = document.querySelector("#img");
+
+  document.addEventListener(
+    "wheel",
+    (event) => {
+      window.scrollBy(0, event.deltaY * 0.3); // Reduce la velocidad del scroll
+      event.preventDefault();
+    },
+    { passive: false }
+  );
+  let maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  });
+
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(() => {
+      const MAX_FRAMES = 242;
+      const scrollPosition = window.scrollY;
+      const scrollFraction = scrollPosition / maxScroll;
+      const frame = Math.floor(scrollFraction * MAX_FRAMES) || 1;
+
+      const id = frame.toString().padStart(4, "0");
+      img.src = `frames/frame_${id}.webp`;
+    });
+  });
+</script>

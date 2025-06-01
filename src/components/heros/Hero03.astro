@@ -1,0 +1,207 @@
+---
+// src/components/heros/Hero03.astro
+---
+
+<section class="relative py-20 md:py-32 overflow-hidden">
+  <!-- Fondo con efecto de profundidad -->
+  <div class="absolute inset-0 z-0">
+    <!-- Imagen de fondo del auto en movimiento (opcional) -->
+    <div class="absolute inset-0"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Lado izquierdo: Características destacadas -->
+      <div class="space-y-8">
+        <div class="inline-block">
+          <span class="text-amber-400 text-sm font-mono tracking-widest"
+            >INNOVACIÓN</span
+          >
+          <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">
+            TECNOLOGÍA <span class="text-amber-400">AMG</span> AVANZADA
+          </h2>
+          <div
+            class="h-1 w-16 bg-gradient-to-r from-amber-400 to-yellow-300 mt-3"
+          >
+          </div>
+        </div>
+
+        <!-- Lista de características con iconos -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 backdrop-blur-[30px] rounded-2xl p-7"
+        >
+          <!-- Característica 1 -->
+          <div
+            class="bg-opacity-20 border-opacity-5 hover:border-amber-400 hover:border-opacity-30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10 animate-fadeIn"
+            style="animation-delay: 0.1s;"
+          >
+            <div
+              class="w-12 h-12 bg-amber-400 bg-opacity-10 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-amber-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-white font-medium mb-1">Aceleración Explosiva</h3>
+            <p class="text-sm text-white">
+              De 0 a 100 km/h en solo 3.4 segundos
+            </p>
+          </div>
+
+          <!-- Característica 2 -->
+          <div
+            class="bg-opacity-20 border-opacity-5 hover:border-amber-400 hover:border-opacity-30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10 animate-fadeIn"
+            style="animation-delay: 0.2s;"
+          >
+            <div
+              class="w-12 h-12 bg-amber-400 bg-opacity-10 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-amber-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-white font-medium mb-1">Sistema de Frenado</h3>
+            <p class="text-sm text-gray-300">
+              Frenos de alto rendimiento con pinzas AMG
+            </p>
+          </div>
+
+          <!-- Característica 3 -->
+          <div
+            class="bg-opacity-20 border-opacity-5 hover:border-amber-400 hover:border-opacity-30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10 animate-fadeIn"
+            style="animation-delay: 0.3s;"
+          >
+            <div
+              class="w-12 h-12 bg-amber-400 bg-opacity-10 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-amber-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0114 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-white font-medium mb-1">Iluminación LED</h3>
+            <p class="text-sm text-gray-300">
+              Sistema de iluminación MULTIBEAM LED
+            </p>
+          </div>
+
+          <!-- Característica 4 -->
+          <div
+            class="bg-opacity-20 p-5 hover:border-amber-400 hover:border-opacity-30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10 animate-fadeIn"
+            style="animation-delay: 0.4s;"
+          >
+            <div
+              class="w-12 h-12 bg-amber-400 bg-opacity-10 rounded-lg flex items-center justify-center mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-amber-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-white font-medium mb-1">Pantalla Táctil</h3>
+            <p class="text-sm text-gray-300">
+              Sistema MBUX con pantalla de 12.3"
+            </p>
+          </div>
+        </div>
+
+        <button
+          class="mt-6 px-8 py-3 bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-medium rounded-full hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-300 flex items-center group"
+        >
+          Ver más características
+          <svg
+            class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Lado derecho: Imagen o visualización 3D -->
+      <div class="relative h-80 md:h-[500px] flex items-center justify-center">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div
+            class="w-full h-full max-w-md mx-auto bg-gradient-to-br from-amber-400 to-transparent opacity-5 rounded-full filter blur-xl"
+          >
+          </div>
+        </div>
+        <div class="relative z-10 text-center">
+          <div
+            class="text-8xl md:text-9xl font-bold text-amber-400 text-opacity-10"
+          >
+            V8
+          </div>
+          <div class="text-white text-xl font-medium -mt-4">BITURBO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Asegurar que el backdrop-filter funcione en todos los navegadores */
+  .backdrop-blur-sm {
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+</style>

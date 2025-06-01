@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section>
+  <img class="imagen" src="/public/ezgif-split/ezgif-frame-001.jpg" />
+</section>
+
+<style>
+  .imagen {
+    width: 100vw;
+    height: 100dvh;
+    object-fit: cover;
+    position: fixed;
+  }
+</style>
+<script type="module">
+  const img = document.querySelector("img");
+
+  let maxsCroll = document.documentElement.scrollHeight - window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    maxsCroll = document.documentElement.scrollHeight - window.innerHeight;
+  });
+
+  window.addEventListener("scroll", () => {
+    const MAX_FRAMES = 145;
+    const scrollPosition = window.scrollY;
+
+    const scrollFraction = scrollPosition / maxsCroll;
+    const frame = Math.floor(scrollFraction * MAX_FRAMES) || 1;
+    const id = frame.toString().padStart(3, "0");
+
+    img.src = `/public/ezgif-split/ezgif-frame-${id}.jpg`;
+  });
+</script>

@@ -1,0 +1,143 @@
+<section class="py-8 md:py-20 px-4 min-h-[60vh] flex items-center">
+  <div class="container mx-auto">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-12 max-w-7xl mx-auto"
+    >
+      <!-- Tarjeta Izquierda - Motor y Rendimiento -->
+      <div
+        class="card1 bg-black/30 backdrop-blur-sm border border-white/5 rounded-xl p-5 transform transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10"
+      >
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-1 h-6 bg-amber-400 rounded-full"></div>
+          <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider">
+            RENDIMIENTO
+          </h3>
+        </div>
+
+        <ul class="space-y-4">
+          <li
+            class="flex justify-between items-center pb-2 border-b border-white/5"
+          >
+            <span class="text-xs text-gray-300">Motor</span>
+            <span class="text-sm text-amber-400 font-medium text-right"
+              >4.0L V8 Biturbo</span
+            >
+          </li>
+          <li
+            class="flex justify-between items-center pb-2 border-b border-white/5"
+          >
+            <span class="text-xs text-gray-300">Potencia</span>
+            <span class="text-sm text-amber-400 font-medium text-right"
+              >671 CV</span
+            >
+          </li>
+          <li
+            class="flex justify-between items-center pb-2 border-b border-white/5"
+          >
+            <span class="text-xs text-gray-300">0-100 km/h</span>
+            <span class="text-sm text-amber-400 font-medium text-right"
+              >3.4s</span
+            >
+          </li>
+          <li class="flex justify-between items-center">
+            <span class="text-xs text-gray-300">Vel. Máx</span>
+            <span class="text-sm text-amber-400 font-medium text-right"
+              >280 km/h</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Espacio central para el auto (se ve el fondo) -->
+      <div class="hidden lg:block"></div>
+
+      <!-- Tarjeta Derecha - Especificaciones Técnicas -->
+      <div
+        class="card2 bg-black/30 backdrop-blur-sm border border-white/5 rounded-xl p-5 transform transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10"
+      >
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-1 h-6 bg-amber-400 rounded-full"></div>
+          <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider">
+            TECNOLOGÍA
+          </h3>
+        </div>
+
+        <ul class="space-y-4">
+          <li
+            class="flex justify-between items-center pb-2 border-b border-white/5"
+          >
+            <span class="text-xs text-gray-300">Transmisión</span>
+            <span class="text-sm text-amber-400 font-medium text-right"
+              >AMG SPEEDSHIFT</span
+            >
+          </li>
+          <li
+            class="flex justify-between items-center pb-2 border-b border-white/5"
+          >
+            <span class="text-xs text-gray-300">Tracción</span>
+            <span class="text-sm text-amber-400 font-medium text-right"
+              >4MATIC+</span
+            >
+          </li>
+          <li
+            class="flex justify-between items-center pb-2 border-b border-white/5"
+          >
+            <span class="text-xs text-gray-300">Suspensión</span>
+            <span class="text-sm text-amber-400 font-medium text-right"
+              >AMG RIDE CONTROL+</span
+            >
+          </li>
+          <li class="flex justify-between items-center">
+            <span class="text-xs text-gray-300">Peso</span>
+            <span class="text-sm text-amber-400 font-medium text-right"
+              >2,115 kg</span
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .backdrop-blur-sm {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .card1 {
+    animation: entry 5s ease-in both;
+    animation-timeline: view();
+    animation-range: entry 30% cover 35%;
+  }
+  .card2 {
+    animation: entry 5s ease-in both;
+    animation-timeline: view();
+    animation-range: entry 30% cover 35%;
+  }
+
+  .transform {
+    transition: all 0.3s ease;
+  }
+
+  /* Asegurar que el contenedor no sea más alto que la pantalla */
+  .min-h-\[60vh\] {
+    min-height: 60vh;
+  }
+
+  /* Asegurar que el contenido no se salga en móviles */
+  @media (max-width: 1024px) {
+    .grid-cols-\[1fr_2fr_1fr\] {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 24rem;
+    }
+  }
+  @keyframes entry {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
